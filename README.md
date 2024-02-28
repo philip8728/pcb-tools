@@ -60,3 +60,27 @@ Dependencies for developing and testing pcb-tools are listed in requirements-dev
 We use [pytest](https://docs.pytest.org/en/latest/) to run pcb-tools's suite of unittests and doctests.
 
     (venv)$ pytest
+
+安装问题排障:
+------------------------
+- ERROR gerber/tests/test_cairo_backend.py - OSError: cannot load library 'libcairo.so.2': dlopen(libcairo.so.2, 0x0002): tried: 'l...
+
+```
+brew install cairo
+brew install pango
+
+ln -s /opt/homebrew/lib/libcairo.2.dylib .
+```
+
+- ModuleNotFoundError: No module named 'cairo'
+```
+python -m pip install pycairo
+```
+
+
+- ModuleNotFoundError: No module named 'cairocffi'
+```
+pip3 install cairocffi
+```
+
+
